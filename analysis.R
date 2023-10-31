@@ -1,3 +1,5 @@
+###  log icin degiskiliiikkk
+
 library(dplyr)
 library(ggplot2)
 library(purrr)
