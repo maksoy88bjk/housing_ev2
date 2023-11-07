@@ -1,0 +1,30 @@
+rm(list=ls())
+library(maps)
+library(ggplot2)
+library(rnaturalearth)
+library(sp)
+library(sf)
+library(tidyverse)
+library(giscoR)
+
+lux_map <- map_data("world", region="Luxembourg")
+lux_map_df<- fortify(lux_map,region="region")
+
+europe <- rnaturalearth::ne_countries(continent = 'europe', returnclass = "sf")
+
+ggplot() +
+  geom_sf(data = europe, aes(fill = mapcolor13), color = "#F3F3F3") + scale_fill_fermenter(palette = "RdPu") +  
+  coord_sf(xlim = c(-10, 35), ylim = c(35, 65)) +
+  ggtitle("Europe") + theme_minimal() + 
+  geom_text(data = europe,  mapping = aes(x=label_x, y=label_y, label=adm0_a3), size=3,fontface='bold')  +
+  theme(legend.position="none") +   labs(x="",y="")
+
+
+nuts2 <- gisco_get_nuts(year = 2021,
+                        resolution = 20,
+                        nuts_level = 2) 
+nuts2 <- nuts2|> 
+  filter(CNTR_CODE == "DE")
+  
+ggplot(nuts2) +
+  geom_sf(aes(fill = 1:length(NUTS_NAME))) + scale_fill_fermenter(palette = "RdPu")
