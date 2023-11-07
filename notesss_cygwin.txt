@@ -1,0 +1,96 @@
+
+cd D:/Kitaplar/METU-PHD/COURSES/3-TERM/STAT_570/Stat570_week5_cmd/housing
+
+pwd
+ls -l
+git init
+git status
+git add .
+git status
+git commit -m "Project Start"
+
+# git e baglanmami istedi daha yapmadik
+# git config --global user.email "you@example.com"
+# git config --global user.name "Your Name"
+
+### degisiklik yaptik analysis.r 'da
+
+git status 
+
+### modified
+
+rm analysis.R 
+git status
+
+# deleted 
+
+### dosyayı sildik ama commit etmedik boylece stash ile geri getirdik
+ls
+
+git log
+
+### sildigim degistirdigim dosyanın her adimini geri getirebiliyoruz
+### her versiyonun ozel adi var asagidaki komutla getiriyoruz
+
+git revert ssadasdasdasdasadsadad
+
+### push etmeye calisiyoz
+git remote add origin git@github.com:maksoy88bjk/hosuing.git
+git branch -M main
+git push -u origin main
+
+
+
+ssh-keygen
+### enter enter enter yaptik
+
+cat C:/Users/mehmetaksoy/.ssh/id_rsa.pub
+
+## cikan sonucu kopyalayıp gitte ssh  add yaptikkk
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDDr9uN4ybmDem6jg+UVV3vOvGoi3yHQVtw5MO32RDAq2q7hIwyIGVD7yEsExXZOx8Mge5rLk8B3tgLivVlkYiNpJN4l8vxpDw6BdlZOcwN2/NwrLm6qgt5bkuNQS+6P5SgSS/pcxgYy3Ydy8E/SWZ6R5Ps+m5NDXO8YTmbE8voHd5VQdOVHnUKi1kEvA3dHxlegZ7LXGccKGSXCpeEZaR4jcKcEwMOGyAJNC63DAWqRlarm7J2t1n/MIqc1BnBS6DDWlINT/L41+ne/0Fr88rVdQPbL52+IY3HD+HjQzj2uITvrTihIhBaokO2SnGXiHGTE0VOQ4LWjDkjkqaFZZ6PoALW7vQ+kkSdECOb5M2oHzCeRytywL6Xa/QhQ5iHT8w5hqYsAVYlHqCO8eGGGos9AyKs6dD8HCBqWe4Uw++Jg/A7UQVFZSAXRPSR41/DGTN/fUnlugWn1eHw4OEjwNpY66N6UvLhRQInjv/A4kWgzIQlNDptsETUFSqSzY3ruWk= mehmetaksoy\mehmetaksoy@mehmetaksoy
+
+###################
+
+# cd ~/.ssh yazınca burada yalnızca knowhost dosyası cikiyor
+# ama  cd C:/Users/mehmetaksoy/.ssh altında 
+# id_rsa id_rsa.pub dosyaları var
+# ls -l ile üc dosya cikmasi gerekiyor 
+# id_rsa id_rsa.pub knownhost
+# bunu duzeltmek icin
+# cd C:/Users/mehmetaksoy/.ssh 
+# cp id_rsa /home/mehmetaksoy/.ssh/
+# cp id_rsa.pub /home/mehmetaksoy/.ssh/
+# cd ~/.ssh
+# cp knownhost C:/Users/mehmetaksoy/.ssh
+# komutlarını yazdık sırasıyla 
+
+# en son asagidaki komutlari yazip. housing altındaki dosyaları githuba push eyledik :) 
+cd D:/Kitaplar/METU-PHD/COURSES/3-TERM/STAT_570/Stat570_week5_cmd/housing
+git init
+git add .
+git commit -m "Project Start"
+git branch -M main
+git remote add origin git@github.com:maksoy88bjk/housing_ev2.git
+git push -u origin main
+
+# deneme text push ettim daha sonra 
+git init
+git add artideneme.txt
+git commit -m "deneme commit"
+git branch -M main
+git remote add origin git@github.com:maksoy88bjk/housing_ev2.git
+git push -u origin main
+
+ls -l 
+-rwxrwx---+ 1 mehmetaksoy Yok 3308 Oct 31 23:15 analysis.R
+-rwxrwx---+ 1 mehmetaksoy Yok    0 Oct 31 23:09 artideneme.txt
+-rwxrwx---+ 1 mehmetaksoy Yok 3924 Oct 31 11:44 save_data.R
+
+# analysis.R dosyasında degisklik yapıp push yaptım bu dosyayı 
+git add analysis.R
+git commit -m "third commit"
+git branch -M main
+git remote add origin git@github.com:maksoy88bjk/housing_ev2.git
+git push -u origin main
+
+
